@@ -183,15 +183,16 @@ function get_sets()
 
     -- Your idle Sublimation set combine from refresh or DT depening on mode.
     sets.me.idle.sublimation = set_combine(sets.me.idle.refresh,{
-        head="Acad. Mortar. +2",
-        body="Pedagogy Gown"
+        head="Acad. Mortar. +3",
+        body="Peda. Gown +3"
     })   
     -- Your idle DT set
     sets.me.idle.dt = set_combine(sets.me.idle[refreshType],{
         main="Earth Staff",
         ring1="Vertigo Ring",
         ring2="Warden's Ring",
-        back="Moonbeam Cape"
+        back="Moonbeam Cape",
+        back="Lugh's Cape",
     })  
     sets.me.idle.mdt = set_combine(sets.me.idle[refreshType],{
         back="Moonbeam Cape"
@@ -271,7 +272,7 @@ function get_sets()
     -- Generic Casting Set that all others take off of. Here you should add all your fast cast 
     -- Grimoire: 10(cap:25) / rdm: 15
     sets.precast.casting = {
-        main="Marin Staff",
+        main="Marin Staff +1",
         sub="Clerisy Strap",
         ring1="Weather. Ring",
         ring2="Vertigo Ring",
@@ -279,7 +280,7 @@ function get_sets()
         ear2="Loquac. Earring",
         neck="Elemental Torque",
         sub="Enki Strap",
-        feet="Amalric Nails +1",
+        feet="Almalric Nails +1",
         hands="Acad. Bracers +2",
         legs="Weath. Pants +1",
         back="Lugh's Cape",
@@ -298,13 +299,17 @@ function get_sets()
     -- Dont set_combine here, as this is the last step of the precast, it will have sorted all the needed pieces already based on type of spell.
     -- Then only swap in what under this set after everything else. 
     sets.precast.grimoire = {
-
+        head="Peda. M.Board +1",
+        feet="Acad. Loafers +3",
+        hands="Arbatel Bracers +1",
+        legs="Arbatel Pants +1",--
+        head="Arbatel bonnet +1"
     }
 
 	
     -- Enhancing Magic, eg. Siegal Sash, etc
     sets.precast.enhancing = set_combine(sets.precast.casting,{
-        body="Argute Gown",
+        body="Peda. Gown +3",
         head="Arbatel bonnet +1"
 
     })
@@ -329,9 +334,9 @@ function get_sets()
     -- Ability Precasting
     ---------------------
 
-    sets.precast["Tabula Rasa"] = {legs="Pedagogy Pants +1"}
-    sets.precast["Enlightenment"] = {body="Pedagogy Gown"}	 
-    sets.precast["Sublimation"] = {head="Scholar's M.board", body="Argute Gown"}	 
+    sets.precast["Tabula Rasa"] = {legs="Peda. Pants +3"}
+    sets.precast["Enlightenment"] = {body="Peda. Gown +3"}	 
+    sets.precast["Sublimation"] = {head="Acad. Mortar +3", body="Peda. Gown +3"}	 
 
 	
 	----------
@@ -356,7 +361,8 @@ function get_sets()
     }
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Helix = {
-        waist="Porous Rope"
+        waist="Porous Rope",
+        neck="Argute Stole +1"
     }	
 
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
@@ -364,20 +370,20 @@ function get_sets()
         back="Solemnity Cape"
     }
 
-	sets.midcast["Sublimation"] = {head="Acad. Mortar. +2", body="Pedagogy Gown"}
+	sets.midcast["Sublimation"] = {head="Acad. Mortar. +3", body="Peda. Gown +3"}
     
     sets.midcast.nuking.normal = {
         main="Akademos",
         neck="Argute Stole +1",
         sub="Enki Strap",
         body="Jhakri Robe +2",
-        feet="Amalric Nails +1",
+        feet="Jhakri Pigaches +2",
         ear1="Hermetic Earring",
         ear2="Hecate's Earring",
-        head="Acad. Mortar. +2",
+        head="Acad. Mortar. +3",
         back="Lugh's Cape",
         hands="Amalric Gages +1",
-        legs="Amalric Slops +1",
+        legs="Peda. Pants +3",
         waist="aswang sash",
         ammo="Memoria Sachet"
 
@@ -391,12 +397,12 @@ function get_sets()
     sets.midcast.nuking.acc = {
         body="Jhakri Robe +2",
         neck="Argute Stole +1",
-        feet="Amalric Nails +1",
         ear1="Hermetic Earring",
-        head="Acad. Mortar. +2",
+        head="Merlinic Hood",
         hands="Amalric Gages +1",
         back="Lugh's Cape",
-        legs="Amalric Slops +1",
+        legs="Peda. Pants +3",
+        feet="Jhakri Pigaches +2",
         waist="aswang sash",
         ammo="Memoria Sachet"
     }
@@ -411,23 +417,23 @@ function get_sets()
 
 	}	
     sets.midcast.IntEnfeebling = {
-        legs="Savant's Pants +1",
+        legs="Arbatel Pants +1",
         ring1="Irrwisch Ring",
         ring2="Vertigo Ring",
-        hands="Argute Bracers",
+        hands="Peda. Bracers +3",
     }
     sets.midcast.MndEnfeebling = {
-        legs="Savant's Pants +1",
+        legs="Arbatel Pants +1",
         back="Swith Cape",
         ring1="Irrwisch Ring",
         ring2="Vertigo Ring",
-        hands="Argute Bracers",
+        hands="Peda. Bracers +3",
 
     }
 	
     -- Enhancing
     sets.midcast.enhancing = set_combine(sets.midcast.casting,{
-
+        body="Peda. Gown +3"
     })
     sets.midcast.storm = set_combine(sets.midcast.enhancing,{
 
@@ -451,6 +457,7 @@ function get_sets()
     sets.midcast["Drain"] = set_combine(sets.midcast.nuking, {
 		head="Pixie Hairpin +1",
 		neck="Erra Pendant",
+        legs="Peda. Pants +3"
     })
     sets.midcast["Aspir"] = sets.midcast["Drain"]
  	
@@ -458,14 +465,13 @@ function get_sets()
     -- Cure Potency
     sets.midcast.cure.normal = set_combine(sets.midcast.casting,{
         body="Gendewitha Bliaut",
-        hands="Weath. Cuffs +1",
-        main="Tamaxchi",
-        sub="Sors Shield",
+        hands="Peda. Bracers +3",
+        main="Pedagogy Staff",
         feet="Vanya Clogs",
         legs="Kaykaus Tights"
     })
     sets.midcast.cure.weather = set_combine(sets.midcast.cure.normal,{
-        main="Chatoyant Staff",
+        main="Pedagogy Staff",
         sub="Curatio Grip",
         back="Twilight cape",
     	waist="Hachirin-no-Obi"
