@@ -87,8 +87,8 @@ nukeModes = M('normal', 'acc')
 -- Setting this to true will stop the text spam, and instead display modes in a UI.
 -- Currently in construction.
 use_UI = true
-hud_x_pos = 1400    --important to update these if you have a smaller screen
-hud_y_pos = 200     --important to update these if you have a smaller screen
+hud_x_pos = 0   --important to update these if you have a smaller screen
+hud_y_pos = 400     --important to update these if you have a smaller screen
 hud_draggable = true
 hud_font_size = 10
 hud_transparency = 200 -- a value of 0 (invisible) to 255 (no transparency at all)
@@ -362,7 +362,8 @@ function get_sets()
     -- Make sure you have a non weather obi in this set. Helix get bonus naturally no need Obi.	
     sets.midcast.Helix = {
         waist="Porous Rope",
-        neck="Argute Stole +1"
+        neck="Argute Stole +1",
+        feet="Amalric Nails +1"
     }	
 
     -- Whatever you want to equip mid-cast as a catch all for all spells, and we'll overwrite later for individual spells
@@ -373,7 +374,7 @@ function get_sets()
 	sets.midcast["Sublimation"] = {head="Acad. Mortar. +3", body="Peda. Gown +3"}
     
     sets.midcast.nuking.normal = {
-        main="Akademos",
+        main="Marin Staff +1",
         neck="Argute Stole +1",
         sub="Enki Strap",
         body="Jhakri Robe +2",
